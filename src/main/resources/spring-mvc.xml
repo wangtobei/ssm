@@ -12,11 +12,22 @@
     <!-- 配置SpringMVC -->
     <context:annotation-config/>
     <!-- 1.开启SpringMVC注解驱动 -->
-    <mvc:annotation-driven />
+    <mvc:annotation-driven/>
+    <!--    拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/dashboard/**"/>
+            <bean class="com.dzu.config.LoginInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/admin/dashboard/**"/>
+            <bean class="com.dzu.config.AdminLoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
     <!-- 2.静态资源默认servlet配置-->
     <mvc:default-servlet-handler/>
-    <mvc:resources mapping="/lib/**" location="/lib/" />
-    <mvc:resources mapping="/img/**" location="/img/" />
+    <mvc:resources mapping="/lib/**" location="/lib/"/>
+    <mvc:resources mapping="/img/**" location="/img/"/>
     <!-- 3.配置jsp 显示ViewResolver视图解析器 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>

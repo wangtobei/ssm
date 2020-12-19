@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dzu.dao.SignRecordMapper">
+    <insert id="addSignRecord" parameterType="com.dzu.pojo.SignRecord">
+        insert into signrecord(rid, sid, subject, "UID", username, phone)
+        values (#{rid}, #{sid}, #{subject}, #{uid}, #{username}, #{phone})
+    </insert>
+    <delete id="deleteSignRecord" parameterType="Integer">
+        delete
+        from signrecord
+        where rid = #{id}
+    </delete>
+    <select id="querySignRecordByUserID" parameterType="Integer" resultType="com.dzu.pojo.SignRecord">
+        select *
+        from signrecord
+        where "UID" = #{id}
+    </select>
+    <update id="updateSignRecord" parameterType="com.dzu.pojo.SignRecord">
+        update signrecord
+        set phone=#{phone},
+            "UID"=#{uid},
+            sid=#{sid},
+            subject=#{subject},
+            username=#{username}
+        where rid = #{rid}
+    </update>
+    <select id="querySignRecords" resultType="com.dzu.pojo.SignRecord">
+        select *
+        from signrecord
+    </select>
+</mapper>

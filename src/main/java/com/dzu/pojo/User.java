@@ -1,16 +1,17 @@
 package com.dzu.pojo;
 
 public class User {
-    private int uid;
+    private int userid;
     private String username;
     private String password;
 
-    public int getUid() {
-        return uid;
+
+    public int getUserid() {
+        return userid;
     }
 
-    public void setUid(int uid) {
-        this.uid = uid;
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 
     public String getUsername() {
@@ -32,7 +33,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "uid=" + uid +
+                "userid=" + userid +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';

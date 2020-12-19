@@ -3,11 +3,16 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-<!--配置数据源-->
-<typeAliases>
-    <package name="com.dzu.pojo"/>
-</typeAliases>
-<mappers>
-    <mapper class="com.dzu.dao.UserMapper" />
-</mappers>
+    <!--配置数据源-->
+    <typeAliases>
+        <package name="com.dzu.pojo"/>
+    </typeAliases>
+    <mappers>
+        <mapper class="com.dzu.dao.UserMapper"/>
+        <mapper class="com.dzu.dao.SubjectMapper"/>
+        <mapper class="com.dzu.dao.NoticeMapper"/>
+        <mapper class="com.dzu.dao.SignRecordMapper"/>
+        <mapper class="com.dzu.dao.NewsMapper"/>
+        <mapper class="com.dzu.dao.AdminMapper"/>
+    </mappers>
 </configuration>

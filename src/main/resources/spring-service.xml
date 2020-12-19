@@ -5,15 +5,29 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
     <!-- 扫描service相关的bean -->
-    <context:component-scan base-package="com.dzu.service" />
-<bean id="UserServiceImp" class="com.dzu.service.UserServiceImp">
-    <property name="userMapper" ref="userMapper" />
-</bean>
-
+    <context:component-scan base-package="com.dzu.service"/>
+    <bean id="UserServiceImp" class="com.dzu.service.UserServiceImp">
+        <property name="userMapper" ref="userMapper"/>
+    </bean>
+    <bean id="SubjectServiceImp" class="com.dzu.service.SubjectServiceImp">
+        <property name="subjectMapper" ref="subjectMapper"/>
+    </bean>
+    <bean id="NoticeServiceImp" class="com.dzu.service.NoticeServiceImp">
+        <property name="noticeMapper" ref="noticeMapper"/>
+    </bean>
+    <bean id="SignRecordServiceImp" class="com.dzu.service.SignRecordServiceImp">
+        <property name="SignRecordMapper" ref="signRecordMapper"/>
+    </bean>
+    <bean id="NewServiceImp" class="com.dzu.service.NewServiceImp">
+        <property name="newsMapper" ref="newsMapper"/>
+    </bean>
+    <bean id="AdminServiceImp" class="com.dzu.service.AdminServiceImp">
+        <property name="adminMapper" ref="adminMapper"/>
+    </bean>
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!-- 注入数据库连接池 -->
-        <property name="dataSource" ref="dataSource" />
+        <property name="dataSource" ref="dataSource"/>
     </bean>
 
 </beans>

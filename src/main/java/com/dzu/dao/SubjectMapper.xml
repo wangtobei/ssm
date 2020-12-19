@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dzu.dao.SubjectMapper">
+    <!--    添加新科目-->
+    <insert id="addSubject" parameterType="com.dzu.pojo.Subject">
+        insert into subject(sid, subject, price)
+        values (#{sid}, #{subject}, #{price})
+    </insert>
+    <!--    更新科目-->
+    <update id="updateSubject" parameterType="com.dzu.pojo.Subject">
+        update subject
+        set subject=#{subject},
+            price=#{price}
+        where sid = #{sid}
+    </update>
+    <!--    根据id删除科目-->
+    <delete id="deleteSubject" parameterType="Integer">
+        delete
+        from subject
+        where sid = #{id}
+    </delete>
+    <!--    查询所有科目-->
+    <select id="querySubjects" resultType="com.dzu.pojo.Subject">
+        select *
+        from subject
+    </select>
+    <!--    根据名称查询科目-->
+    <select id="querySubjectByName" parameterType="java.lang.String" resultType="com.dzu.pojo.Subject">
+        select *
+        from subject
+        where subject = #{name}
+    </select>
+    <!--    根据id查询科目-->
+    <select id="querySubjectById" parameterType="Integer" resultType="com.dzu.pojo.Subject">
+        select *
+        from subject
+        where sid = #{id}
+    </select>
+</mapper>

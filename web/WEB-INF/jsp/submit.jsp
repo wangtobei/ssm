@@ -17,25 +17,23 @@
     <form action="${pageContext.request.contextPath }/dashboard/signup/submit" method="post">
         <div class="row" style="width: 500px;margin: auto">
             <div class="col-12">
-                <label for="rid">recordid</label>
-                <input type="text" class="form-control" placeholder="课程id" id="rid" name="rid">
-            </div>
-            <div class="col-12">
                 <label for="sid">科目编号</label>
-                <input type="text" class="form-control" placeholder="课程id" id="sid" name="sid" value="${subject.sid}">
+                <input type="text" class="form-control" placeholder="课程id" id="sid" name="sid" value="${subject.sid}"
+                       readonly>
             </div>
             <div class="col-12">
                 <label for="subject">课程名称</label>
-                <input type="text" class="form-control" placeholder="课程名称" id="subject" name="subject"
+                <input type="text" class="form-control" placeholder="课程名称" id="subject" name="subject" readonly
                        value="${subject.subject}">
             </div>
             <div class="col-12">
                 <label for="uid">报考人编号</label>
-                <input type="text" class="form-control" placeholder="报考人id" id="uid" name="uid" value="${user.userid}">
+                <input type="text" class="form-control" placeholder="报考人id" id="uid" name="uid" value="${user.userid}"
+                       readonly>
             </div>
             <div class="col-12">
                 <label for="username">报考人</label>
-                <input type="text" class="form-control" placeholder="报考人" id="username" name="username"
+                <input type="text" class="form-control" placeholder="报考人" id="username" name="username" readonly
                        value="${user.username}">
             </div>
             <div class="col-12">

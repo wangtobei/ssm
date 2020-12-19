@@ -64,7 +64,7 @@
             var value = obj.value //得到修改后的值
                 , data = obj.data //得到所在行所有键值
                 , field = obj.field; //得到字段
-            layer.msg('[ID: ' + data.id + '] ' + field + ' 字段更改为：' + value);
+            layer.msg('[ID: ' + data.nid + '] ' + field + ' 字段更改为：' + value);
             console.log(obj.data)
             axios.post("${pageContext.request.contextPath}/admin/notices/update", Qs.stringify(obj.data)).then((res) => {
                 console.log(res.data)

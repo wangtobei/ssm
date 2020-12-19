@@ -35,10 +35,6 @@
             <h2 style="text-align: center">请注册系统</h2>
             <form action="${pageContext.request.contextPath}/user/add" method="post">
                 <div class="form-group">
-                    <label for="uid">id：</label>
-                    <input class="form-control" type="text" id="uid" name="userid" required>
-                </div>
-                <div class="form-group">
                     <label for="username">用户名：</label>
                     <input class="form-control" type="text" id="username" name="username" required>
                 </div>

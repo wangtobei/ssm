@@ -1,0 +1,44 @@
+create sequence admin_autoinc
+minvalue 1
+maxvalue 9999999999999999999999999999
+start with 1
+increment by 1
+nocache;
+
+create sequence news_autoinc
+minvalue 1
+maxvalue 9999999999999999999999999999
+start with 1
+increment by 1
+nocache;
+
+create sequence notice_autoinc
+minvalue 1
+maxvalue 9999999999999999999999999999
+start with 1
+increment by 1
+nocache;
+
+
+create sequence signrecord_autoinc
+minvalue 1
+maxvalue 9999999999999999999999999999
+start with 1
+increment by 1
+nocache;
+
+
+create sequence subject_autoinc
+minvalue 1
+maxvalue 9999999999999999999999999999
+start with 1
+increment by 1
+nocache;
+
+
+create sequence signuser_autoinc
+minvalue 1
+maxvalue 9999999999999999999999999999
+start with 1
+increment by 1
+nocache;

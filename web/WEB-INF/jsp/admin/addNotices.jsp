@@ -15,13 +15,7 @@
 <div style="margin-left: 210px;margin-top: 50px">
     <div style="width: 500px;margin: auto">
         <form class="layui-form" action="${pageContext.request.contextPath}/admin/notices/adddb">
-            <div class="layui-form-item">
-                <label class="layui-form-label">公告id</label>
-                <div class="layui-input-block">
-                    <input type="text" name="nid" lay-verify="title" autocomplete="off" placeholder="请输入公告标题" required
-                           class="layui-input">
-                </div>
-            </div>
+
             <div class="layui-form-item">
                 <label class="layui-form-label">公告标题</label>
                 <div class="layui-input-block">
@@ -32,9 +26,9 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">公告内容</label>
                 <div class="layui-input-block">
-                    <input type="text" name="content" lay-verify="title" autocomplete="off" placeholder="请输入公告内容"
-                           required
-                           class="layui-input">
+                    <textarea name="content" placeholder="请输入公告内容"
+                              required
+                              class="layui-textarea"></textarea>
                 </div>
             </div>
             <div style="width: 216px; margin: 0 auto;">

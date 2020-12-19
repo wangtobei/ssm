@@ -39,7 +39,7 @@
             , cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
             , cols: [[
                 {field: 'sid', title: 'ID', fixed: 'left', unresize: true, sort: true}
-                , {field: 'subject', title: '新闻标题', edit: 'text'}
+                , {field: 'subject', title: '考试科目', edit: 'text'}
                 , {field: 'price', title: '考试费用', edit: 'text'}
                 , {fixed: 'right', title: '操作', toolbar: '#barDemo'}
             ]]
@@ -64,7 +64,7 @@
             var value = obj.value //得到修改后的值
                 , data = obj.data //得到所在行所有键值
                 , field = obj.field; //得到字段
-            layer.msg('[ID: ' + data.id + '] ' + field + ' 字段更改为：' + value);
+            layer.msg('[ID: ' + data.sid + '] ' + field + ' 字段更改为：' + value);
             console.log(obj.data)
             axios.post("${pageContext.request.contextPath}/admin/dashboard/subjects/update", Qs.stringify(obj.data)).then((res) => {
                 console.log(res.data)

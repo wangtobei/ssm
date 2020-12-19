@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>添加公告</title>
+    <title>添加科目</title>
 </head>
 <body>
 <jsp:include page="nav.jsp"/>
@@ -16,23 +16,17 @@
     <div style="width: 500px;margin: auto">
         <form class="layui-form" action="${pageContext.request.contextPath}/admin/dashboard/subjects/addtodb">
             <div class="layui-form-item">
-                <label class="layui-form-label">科目id</label>
-                <div class="layui-input-block">
-                    <input type="text" name="sid" lay-verify="title" autocomplete="off" placeholder="请输入公告标题" required
-                           class="layui-input">
-                </div>
-            </div>
-            <div class="layui-form-item">
                 <label class="layui-form-label">科目</label>
                 <div class="layui-input-block">
-                    <input type="text" name="subject" lay-verify="title" autocomplete="off" placeholder="请输入公告标题" required
+                    <input type="text" name="subject" autocomplete="off" placeholder="请输入科目名称"
+                           required
                            class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">费用</label>
                 <div class="layui-input-block">
-                    <input type="text" name="price" lay-verify="title" autocomplete="off" placeholder="请输入公告内容"
+                    <input type="text" name="price" autocomplete="off" placeholder="请输入费用"
                            required
                            class="layui-input">
                 </div>

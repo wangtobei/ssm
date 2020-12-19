@@ -1,0 +1,45 @@
+create or replace trigger insert_admin_autoinc
+before insert on ADMIN FOR each ROW
+begin
+SELECT admin_autoinc.nextval INTO :new.id FROM dual;
+end insert_admin_autoinc;
+
+
+
+create or replace trigger insert_new_autoinc
+before insert on news FOR each ROW
+begin
+SELECT news_autoinc.nextval INTO :new.id FROM dual;
+end insert_new_autoinc;
+
+
+create or replace trigger insert_notice_autoinc
+before insert on notice FOR each ROW
+begin
+SELECT notice_autoinc.nextval INTO :new.nid FROM dual;
+end insert_notice_autoinc;
+
+
+create or replace trigger insert_signrecord_autoinc
+before insert on signrecord FOR each ROW
+begin
+SELECT signrecord_autoinc.nextval INTO :new.rid FROM dual;
+end insert_signrecord_autoinc;
+
+
+
+create or replace trigger insert_subject_autoinc
+before insert on subject FOR each ROW
+begin
+SELECT subject_autoinc.nextval INTO :new.sid FROM dual;
+end insert_subject_autoinc;
+
+
+
+create or replace trigger insert_signuser_autoinc
+before insert on signuser FOR each ROW
+begin
+SELECT signuser_autoinc.nextval INTO :new.userid FROM dual;
+end insert_signuser_autoinc;
+
+

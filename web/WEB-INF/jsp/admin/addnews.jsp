@@ -16,23 +16,16 @@
     <div style="width: 500px;margin: auto">
         <form class="layui-form" action="${pageContext.request.contextPath}/admin/dashboard/news/addtodb">
             <div class="layui-form-item">
-                <label class="layui-form-label">新闻id</label>
-                <div class="layui-input-block">
-                    <input type="text" name="id" lay-verify="title" autocomplete="off" placeholder="请输入公告标题" required
-                           class="layui-input">
-                </div>
-            </div>
-            <div class="layui-form-item">
                 <label class="layui-form-label">新闻类型</label>
                 <div class="layui-input-block">
-                    <input type="text" name="type" lay-verify="title" autocomplete="off" placeholder="请输入公告标题" required
+                    <input type="text" name="type" lay-verify="title" autocomplete="off" placeholder="请输入新闻类型" required
                            class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">新闻标题</label>
                 <div class="layui-input-block">
-                    <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入公告内容"
+                    <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入新闻标题"
                            required
                            class="layui-input">
                 </div>
@@ -40,9 +33,9 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">新闻内容</label>
                 <div class="layui-input-block">
-                    <input type="text" name="content" lay-verify="title" autocomplete="off" placeholder="请输入公告内容"
-                           required
-                           class="layui-input">
+                    <textarea name="content" placeholder="请输入新闻内容"
+                              required
+                              class="layui-textarea"></textarea>
                 </div>
             </div>
             <div style="width: 216px; margin: 0 auto;">

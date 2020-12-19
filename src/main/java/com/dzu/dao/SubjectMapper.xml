@@ -5,8 +5,8 @@
 <mapper namespace="com.dzu.dao.SubjectMapper">
     <!--    添加新科目-->
     <insert id="addSubject" parameterType="com.dzu.pojo.Subject">
-        insert into subject(sid, subject, price)
-        values (#{sid}, #{subject}, #{price})
+        insert into subject(subject, price)
+        values (#{subject}, #{price})
     </insert>
     <!--    更新科目-->
     <update id="updateSubject" parameterType="com.dzu.pojo.Subject">

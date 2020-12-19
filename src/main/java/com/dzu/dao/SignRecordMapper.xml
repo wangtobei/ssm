@@ -33,6 +33,6 @@
     <select id="querySignRecordById" resultType="com.dzu.pojo.SignRecord" parameterType="Integer">
         select *
         from signrecord
-        where sid = #{id}
+        where rid = #{id}
     </select>
 </mapper>

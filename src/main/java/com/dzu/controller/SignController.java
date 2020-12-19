@@ -94,9 +94,26 @@ public class SignController {
     }
 
     @RequestMapping("/dashboard/signrecord/print/{id}")
-    public String Print(Model model, @PathVariable int id) {
+    public String Print(Model model, @PathVariable int id, HttpServletRequest request) {
+        boolean flag = false;
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+        System.out.println(user);
+        List<SignRecord> list = signRecordService.querySignRecordByUserID(user.getUserid());
+        System.out.println(list);
+//判断当前用户是否报考的传入的id的测试
+        for (SignRecord item : list
+        ) {
+            if (item.getRid() == id) {
+                flag = true;
+            }
+        }
+        if (!flag) {
+            model.addAttribute("tips", "信息错误哦！");
+            return "tips";
+        }
         SignRecord signRecord = signRecordService.querySignRecordById(id);
-        model.addAttribute("signrecord",signRecord);
+        model.addAttribute("signrecord", signRecord);
         return "print";
 
     }

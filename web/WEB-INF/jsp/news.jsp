@@ -14,13 +14,20 @@
 <body>
 <jsp:include page="head.jsp"/>
 <div class="container" style="margin-top: 20px">
-    <c:forEach var="item" items="${list}">
-        <div class="alert alert-success" role="alert">
-            <h4 class="alert-heading">${item.title}</h4>
-            <p>${item.content}</p>
-        </div>
-        <br>
-    </c:forEach>
+    <div class="alert alert-info" role="alert">
+        热点新闻
+    </div>
+    <div class="row">
+        <c:forEach var="item" items="${list}">
+            <div class="card col-3 border-secondary mb-3" style="max-width: 18rem;margin: 10px">
+                <div class="card-header">${item.type}</div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title">${item.title}</h5>
+                    <p class="card-text">${item.content}</p>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
 </div>
 </body>
 </html>

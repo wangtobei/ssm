@@ -10,6 +10,18 @@
 <html>
 <head>
     <title>开始报名</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/lib/layui/css/layui.css">
+    <style>
+        .price {
+            display: block;
+            padding: 10px;
+            height: 60px;
+            width: 200px;
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 300%;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="head.jsp"/>
@@ -40,7 +52,13 @@
                 <label for="phone">电话</label>
                 <input type="text" class="form-control" id="phone" placeholder="联系方式" name="phone" required>
             </div>
-            <button type="submit" class="btn btn-primary">报名</button>
+            <div class="col-12">
+                <label>费用</label>
+                <div class="layui-badge price">${subject.price}元</div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary" style="width: 200px;margin: 30px auto">报名</button>
+            </div>
         </div>
     </form>
 </div>

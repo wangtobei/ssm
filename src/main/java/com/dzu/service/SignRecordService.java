@@ -14,4 +14,5 @@ public interface SignRecordService {
     List<SignRecord> querySignRecords();
 
     List<SignRecord> querySignRecordByUserID(int id);
+    SignRecord querySignRecordById(int id);
 }

@@ -36,21 +36,6 @@ public class LoginController {
         return "register";
     }
 
-    //用户后台面板，登陆后才可以进入
-//    @RequestMapping("/dashboard")
-//    public String dashboard(HttpServletRequest request) {
-//        HttpSession session = request.getSession();
-//        User user = (User) session.getAttribute("user");
-//        if (user != null) {
-//            System.out.println("通过登录验证");
-//            return "dashboard";
-//        } else {
-//            System.out.println("还没有登录哦");
-//            return "redirect:/";
-//        }
-//
-//    }
-
     //用户登录验证
     @RequestMapping("/login")
     public String LoginCheck(Model model, User user, HttpSession session) {

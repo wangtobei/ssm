@@ -47,11 +47,10 @@ public class SignController {
             User userDB = userservice.queryUserByName(username); //从数据库中把当前用户的信息查出来
             Subject subject = subjectService.querySubjectById(id);  //根据id查询要报考科目的信息
             List<SignRecord> list = signRecordService.querySignRecordByUserID(userDB.getUserid()); //查找当前用户已经报考的科目
-            for (SignRecord record:list
-                 ) {
-                if (record.getSid()==id)
-                {
-                    model.addAttribute("tips","已经报名的科目不可以重复报名！");
+            for (SignRecord record : list
+            ) {
+                if (record.getSid() == id) {
+                    model.addAttribute("tips", "已经报名的科目不可以重复报名！");
                     return "tips";
                 }
             }
@@ -92,5 +91,13 @@ public class SignController {
     public String DeleteSignRecord(@PathVariable int id) {
         signRecordService.deleteSignRecord(id);
         return "redirect:/dashboard/signed";
+    }
+
+    @RequestMapping("/dashboard/signrecord/print/{id}")
+    public String Print(Model model, @PathVariable int id) {
+        SignRecord signRecord = signRecordService.querySignRecordById(id);
+        model.addAttribute("signrecord",signRecord);
+        return "print";
+
     }
 }

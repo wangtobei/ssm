@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dzu.dao.SignRecordMapper">
     <insert id="addSignRecord" parameterType="com.dzu.pojo.SignRecord">
-        insert into signrecord( sid, subject, "UID", username, phone)
+        insert into signrecord(sid, subject, "UID", username, phone)
         values (#{sid}, #{subject}, #{uid}, #{username}, #{phone})
     </insert>
     <delete id="deleteSignRecord" parameterType="Integer">
@@ -29,5 +29,10 @@
     <select id="querySignRecords" resultType="com.dzu.pojo.SignRecord">
         select *
         from signrecord
+    </select>
+    <select id="querySignRecordById" resultType="com.dzu.pojo.SignRecord" parameterType="Integer">
+        select *
+        from signrecord
+        where sid = #{id}
     </select>
 </mapper>

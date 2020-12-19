@@ -14,16 +14,16 @@
     <!-- 1.开启SpringMVC注解驱动 -->
     <mvc:annotation-driven/>
     <!--    拦截器-->
-    <mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/dashboard/**"/>
-            <bean class="com.dzu.config.LoginInterceptor"/>
-        </mvc:interceptor>
-        <mvc:interceptor>
-            <mvc:mapping path="/admin/dashboard/**"/>
-            <bean class="com.dzu.config.AdminLoginInterceptor"/>
-        </mvc:interceptor>
-    </mvc:interceptors>
+<!--    <mvc:interceptors>-->
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/dashboard/**"/>-->
+<!--            <bean class="com.dzu.config.LoginInterceptor"/>-->
+<!--        </mvc:interceptor>-->
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/admin/dashboard/**"/>-->
+<!--            <bean class="com.dzu.config.AdminLoginInterceptor"/>-->
+<!--        </mvc:interceptor>-->
+<!--    </mvc:interceptors>-->
     <!-- 2.静态资源默认servlet配置-->
     <mvc:default-servlet-handler/>
     <mvc:resources mapping="/lib/**" location="/lib/"/>

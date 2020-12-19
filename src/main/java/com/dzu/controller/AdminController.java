@@ -233,4 +233,9 @@ public class AdminController {
         userservice.deleteUserById(id);
         return true;
     }
+    @RequestMapping("/dashboard/logout")
+    public String Logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/admin/";
+    }
 }

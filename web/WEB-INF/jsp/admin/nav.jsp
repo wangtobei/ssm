@@ -32,6 +32,7 @@
     </li>
     <li class="layui-nav-item"><a href="${pageContext.request.contextPath}/admin/dashboard/signrecord">查看报名表</a></li>
     <li class="layui-nav-item"><a href="${pageContext.request.contextPath}/admin/dashboard/user">用户管理</a></li>
+    <li class="layui-nav-item"><a href="${pageContext.request.contextPath}/admin/dashboard/logout">退出系统</a></li>
 </ul>
 <script src="${pageContext.request.contextPath}/lib/layui/layui.all.js"></script>
 </body>

@@ -104,6 +104,13 @@ public class AdminController {
         return "redirect:/admin/dashboard";
     }
 
+    //搜索
+    @RequestMapping("/dashboard/notices/query/{title}")
+    @ResponseBody
+    public List<Notice> queryNoticeByTitle(@PathVariable String title) {
+        return noticeService.queryNoticesByTitle(title);
+    }
+
     //新闻管理相关
     @RequestMapping("/dashboard/news")
     public String NewsPage() {
@@ -180,6 +187,13 @@ public class AdminController {
         return true;
     }
 
+    //根据科目名称查询
+    @RequestMapping("/dashboard/subjects/query/{subject}")
+    @ResponseBody
+    public List<Subject> querySubjectsByName(@PathVariable String subject) {
+        return subjectService.querySubjectsByName(subject);
+    }
+
     //将科目添加到数据库
     @RequestMapping("/dashboard/subjects/addtodb")
     public String addSubjectsTODB(Subject subject) {
@@ -223,6 +237,13 @@ public class AdminController {
         return true;
     }
 
+    //根据用户名查询
+    @RequestMapping("/dashboard/signrecord/query/{username}")
+    @ResponseBody
+    public List<SignRecord> querySignRecordByUserName(@PathVariable String username) {
+        return signRecordService.querySignRecordByUserName(username);
+    }
+
     //用户管理
     @RequestMapping("/dashboard/user")
     public String UserPage() {
@@ -249,6 +270,13 @@ public class AdminController {
         return true;
     }
 
+    @RequestMapping("/dashboard/user/query/{name}")
+    @ResponseBody
+    public List<User> queryUsersByName(@PathVariable String name) {
+        return userservice.queryUsersByName(name);
+    }
+
+    //退出系统
     @RequestMapping("/dashboard/logout")
     public String Logout(HttpSession session) {
         session.invalidate();

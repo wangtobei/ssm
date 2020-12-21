@@ -36,4 +36,8 @@ public class UserServiceImp implements Userservice {
     public User queryUserByName(String username) {
         return userMapper.queryUserByName(username);
     }
+
+    public List<User> queryUsersByName(String username) {
+        return userMapper.queryUsersByName(username);
+    }
 }

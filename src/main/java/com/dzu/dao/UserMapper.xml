@@ -42,4 +42,11 @@
         from SIGNUSER
         where username = #{username}
     </select>
+
+
+    <select id="queryUsersByName" resultType="com.dzu.pojo.User" parameterType="java.lang.String">
+        select *
+        from SIGNUSER
+        where username = #{username}
+    </select>
 </mapper>

@@ -38,4 +38,10 @@
         from subject
         where sid = #{id}
     </select>
+
+    <select id="querySubjectsByName" resultType="com.dzu.pojo.Subject" parameterType="java.lang.String">
+        select *
+        from subject
+        where subject = #{subject}
+    </select>
 </mapper>

@@ -30,23 +30,23 @@
         <div class="row" style="width: 500px;margin: auto">
             <div class="col-12">
                 <label for="sid">科目编号</label>
-                <input type="text" class="form-control" placeholder="课程id" id="sid" name="sid" value="${subject.sid}"
-                       readonly>
+                <input type="text" class="form-control" id="sid" name="sid" value="${subject.sid}"
+                       readonly required>
             </div>
             <div class="col-12">
                 <label for="subject">课程名称</label>
-                <input type="text" class="form-control" placeholder="课程名称" id="subject" name="subject" readonly
-                       value="${subject.subject}">
+                <input type="text" class="form-control" id="subject" name="subject" readonly
+                       value="${subject.subject}" required>
             </div>
             <div class="col-12">
                 <label for="uid">报考人编号</label>
-                <input type="text" class="form-control" placeholder="报考人id" id="uid" name="uid" value="${user.userid}"
-                       readonly>
+                <input type="text" class="form-control" id="uid" name="uid" value="${user.userid}"
+                       readonly required>
             </div>
             <div class="col-12">
                 <label for="username">报考人</label>
-                <input type="text" class="form-control" placeholder="报考人" id="username" name="username"
-                       value="${user.username}">
+                <input type="text" class="form-control" id="username" name="username" readonly
+                       value="${user.realname}" required>
             </div>
             <div class="col-12">
                 <label for="phone">电话</label>

@@ -15,4 +15,6 @@ public interface NoticeService {
 
     //显示所有公告
     List<Notice> queryNotices();
+
+    List<Notice> queryNoticesByTitle(String title);
 }

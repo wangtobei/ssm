@@ -23,4 +23,6 @@ public interface UserMapper {
 
     //根据姓名查询单个用户
     User queryUserByName(@Param("username") String username);
+
+    List<User> queryUsersByName(String username);
 }

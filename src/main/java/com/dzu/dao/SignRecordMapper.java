@@ -16,4 +16,6 @@ public interface SignRecordMapper {
     List<SignRecord> querySignRecordByUserID(int id);
 
     SignRecord querySignRecordById(int id);
+
+    List<SignRecord> querySignRecordByUserName(String name);
 }

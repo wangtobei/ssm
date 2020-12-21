@@ -27,4 +27,9 @@ public class NoticeServiceImp implements NoticeService {
     public List<Notice> queryNotices() {
         return noticeMapper.queryNotices();
     }
+
+    @Override
+    public List<Notice> queryNoticesByTitle(String title) {
+        return noticeMapper.queryNoticesByTitle(title);
+    }
 }

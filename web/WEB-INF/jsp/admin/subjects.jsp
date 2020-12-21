@@ -16,6 +16,16 @@
     <br>
     <a href="${pageContext.request.contextPath}/admin/dashboard/subjects/add" class="layui-btn layui-btn-sm"><i
             class="layui-icon"></i></a>
+    <div class="layui-row" style="margin-top: 10px">
+        <div class="layui-col-md9">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入科目名称"
+                   class="layui-input"
+                   id="title">
+        </div>
+        <div class="layui-col-md3">
+            <button type="button" class="layui-btn" onclick="search()">搜索</button>
+        </div>
+    </div>
     <table class="layui-hide" id="test" lay-filter="test"></table>
 </div>
 <script type="text/html" id="barDemo">
@@ -24,8 +34,9 @@
 <script src="${pageContext.request.contextPath}/lib/axios.min.js"></script>
 <script src="${pageContext.request.contextPath}/lib/qs.min.js"></script>
 <script>
+    var table = layui.table;
     layui.use('table', function () {
-        var table = layui.table;
+
         table.render({
             elem: '#test'
             , url: '${pageContext.request.contextPath}/admin/dashboard/subjects/all'
@@ -71,6 +82,23 @@
             })
         });
     });
+
+    function search() {
+        var title = document.getElementById("title").value;
+        if (title !== "") {
+            table.reload('test', {
+                url: '${pageContext.request.contextPath}/admin/dashboard/subjects/query/' + title
+                , where: {} //设定异步数据接口的额外参数
+                //,height: 300
+            });
+        } else {
+            table.reload('test', {
+                url: '${pageContext.request.contextPath}/admin/dashboard/subjects/all'
+                , where: {} //设定异步数据接口的额外参数
+                //,height: 300
+            });
+        }
+    }
 </script>
 </body>
 </html>

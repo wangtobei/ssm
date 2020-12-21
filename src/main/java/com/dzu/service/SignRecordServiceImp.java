@@ -36,5 +36,9 @@ public class SignRecordServiceImp implements SignRecordService {
         return signRecordMapper.querySignRecordById(id);
     }
 
+    public List<SignRecord> querySignRecordByUserName(String name) {
+        return signRecordMapper.querySignRecordByUserName(name);
+    }
+
 
 }

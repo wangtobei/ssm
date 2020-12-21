@@ -35,4 +35,9 @@
         from signrecord
         where rid = #{id}
     </select>
+    <select id="querySignRecordByUserName" resultType="com.dzu.pojo.SignRecord" parameterType="java.lang.String">
+        select *
+        from signrecord
+        where username = #{name}
+    </select>
 </mapper>

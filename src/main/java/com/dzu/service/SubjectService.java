@@ -22,4 +22,6 @@ public interface SubjectService {
 
     //根据id查询科目
     Subject querySubjectById(int id);
+
+    List<Subject> querySubjectsByName(String subject);
 }

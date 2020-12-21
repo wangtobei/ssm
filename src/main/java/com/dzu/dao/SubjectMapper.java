@@ -19,6 +19,9 @@ public interface SubjectMapper {
 
     //根据名称查询科目
     Subject querySubjectByName(String name);
+
     //根据id查询
     Subject querySubjectById(int id);
+
+    List<Subject> querySubjectsByName(String subject);
 }

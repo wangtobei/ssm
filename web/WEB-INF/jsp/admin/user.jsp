@@ -14,7 +14,16 @@
 <jsp:include page="nav.jsp"/>
 <div style="margin-left: 210px">
     <br>
-
+    <div class="layui-row" style="margin-top: 10px">
+        <div class="layui-col-md9">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入用户名"
+                   class="layui-input"
+                   id="title">
+        </div>
+        <div class="layui-col-md3">
+            <button type="button" class="layui-btn" onclick="search()">搜索</button>
+        </div>
+    </div>
     <table class="layui-hide" id="test" lay-filter="test"></table>
 </div>
 <script type="text/html" id="barDemo">
@@ -23,8 +32,9 @@
 <script src="${pageContext.request.contextPath}/lib/axios.min.js"></script>
 <script src="${pageContext.request.contextPath}/lib/qs.min.js"></script>
 <script>
+    var table = layui.table;
     layui.use('table', function () {
-        var table = layui.table;
+
         table.render({
             elem: '#test'
             , url: '${pageContext.request.contextPath}/admin/dashboard/user/all'
@@ -40,6 +50,9 @@
                 {field: 'userid', title: 'ID', fixed: 'left', unresize: true, sort: true}
                 , {field: 'username', title: '用户名', edit: 'text'}
                 , {field: 'password', title: '密码', edit: 'text'}
+                , {field: 'realname', title: '真实姓名', edit: 'text'}
+                , {field: 'sex', title: '性别'}
+                , {field: 'phone', title: '联系方式', edit: 'text'}
                 , {fixed: 'right', title: '操作', toolbar: '#barDemo'}
             ]]
             , page: false
@@ -63,13 +76,30 @@
             var value = obj.value //得到修改后的值
                 , data = obj.data //得到所在行所有键值
                 , field = obj.field; //得到字段
-            layer.msg('[ID: ' + data.id + '] ' + field + ' 字段更改为：' + value);
+            layer.msg('[ID: ' + data.userid + '] ' + field + ' 字段更改为：' + value);
             console.log(obj.data)
             axios.post("${pageContext.request.contextPath}/admin/dashboard/user/update", Qs.stringify(obj.data)).then((res) => {
                 console.log(res.data)
             })
         });
     });
+
+    function search() {
+        var title = document.getElementById("title").value;
+        if (title !== "") {
+            table.reload('test', {
+                url: '${pageContext.request.contextPath}/admin/dashboard/user/query/' + title
+                , where: {} //设定异步数据接口的额外参数
+                //,height: 300
+            });
+        } else {
+            table.reload('test', {
+                url: '${pageContext.request.contextPath}/admin/dashboard/user/all'
+                , where: {} //设定异步数据接口的额外参数
+                //,height: 300
+            });
+        }
+    }
 </script>
 </body>
 </html>

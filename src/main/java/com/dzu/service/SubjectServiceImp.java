@@ -35,4 +35,8 @@ public class SubjectServiceImp implements SubjectService {
     public Subject querySubjectById(int id) {
         return subjectMapper.querySubjectById(id);
     }
+
+    public List<Subject> querySubjectsByName(String subject) {
+        return subjectMapper.querySubjectsByName(subject);
+    }
 }

@@ -14,6 +14,16 @@
 <jsp:include page="nav.jsp"/>
 <div style="margin-left: 210px">
     <br>
+    <div class="layui-row" style="margin-top: 10px">
+        <div class="layui-col-md9">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入报考人姓名"
+                   class="layui-input"
+                   id="title">
+        </div>
+        <div class="layui-col-md3">
+            <button type="button" class="layui-btn" onclick="search()">搜索</button>
+        </div>
+    </div>
     <table class="layui-hide" id="test" lay-filter="test"></table>
 </div>
 <script type="text/html" id="barDemo">
@@ -22,8 +32,9 @@
 <script src="${pageContext.request.contextPath}/lib/axios.min.js"></script>
 <script src="${pageContext.request.contextPath}/lib/qs.min.js"></script>
 <script>
+    var table = layui.table;
     layui.use('table', function () {
-        var table = layui.table;
+
         table.render({
             elem: '#test'
             , url: '${pageContext.request.contextPath}/admin/dashboard/signrecord/all'
@@ -38,7 +49,7 @@
             , cols: [[
                 {field: 'rid', title: 'ID', fixed: 'left', unresize: true, sort: true}
                 , {field: 'subject', title: '科目'}
-                , {field: 'username', title: '报考人',edit: 'text'}
+                , {field: 'username', title: '报考人', edit: 'text'}
                 , {field: 'phone', title: '联系方式', edit: 'text'}
                 , {fixed: 'right', title: '操作', toolbar: '#barDemo'}
             ]]
@@ -70,6 +81,23 @@
             })
         });
     });
+
+    function search() {
+        var title = document.getElementById("title").value;
+        if (title !== "") {
+            table.reload('test', {
+                url: '${pageContext.request.contextPath}/admin/dashboard/notices/query/' + title
+                , where: {} //设定异步数据接口的额外参数
+                //,height: 300
+            });
+        } else {
+            table.reload('test', {
+                url: '${pageContext.request.contextPath}/admin/dashboard/signrecord/all'
+                , where: {} //设定异步数据接口的额外参数
+                //,height: 300
+            });
+        }
+    }
 </script>
 </body>
 </html>

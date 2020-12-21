@@ -1,0 +1,13 @@
+create or replace trigger signuser_to_signrecord
+before update on SIGNUSER for each row
+begin
+update SIGNRECORD set username=:new.realname where uid=:new.userid;
+end signuser_to_signrecord;
+
+
+
+create or replace trigger signrecord_to_signuser
+before update on SIGNRECORD for each row
+begin
+update SIGNUSER set realname=:new.username where userid=:new.uid;
+end signrecord_to_signuser;

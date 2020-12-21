@@ -16,10 +16,16 @@
     <br>
     <a href="${pageContext.request.contextPath}/admin/dashboard/news/add" class="layui-btn layui-btn-sm"><i
             class="layui-icon"></i></a>
-    <div class="layui-row">
-        <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input"
-               id="title">
-        <button type="button" class="layui-btn" onclick="search()">搜索</button>
+    <br>
+    <div class="layui-row" style="margin-top: 10px">
+        <div class="layui-col-md9">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
+                   class="layui-input"
+                   id="title">
+        </div>
+        <div class="layui-col-md3">
+            <button type="button" class="layui-btn" onclick="search()">搜索</button>
+        </div>
     </div>
     <table class="layui-hide" id="test" lay-filter="test"></table>
 </div>
@@ -81,15 +87,13 @@
 
     function search() {
         var title = document.getElementById("title").value;
-        if (title !== "")
-        {
+        if (title !== "") {
             table.reload('test', {
                 url: '${pageContext.request.contextPath}/admin/dashboard/news/query/' + title
                 , where: {} //设定异步数据接口的额外参数
                 //,height: 300
             });
-        }
-        else{
+        } else {
             table.reload('test', {
                 url: '${pageContext.request.contextPath}/admin/dashboard/news/all'
                 , where: {} //设定异步数据接口的额外参数

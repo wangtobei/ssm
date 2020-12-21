@@ -18,7 +18,10 @@
     <update id="updateUser" parameterType="com.dzu.pojo.User">
         update SIGNUSER
         set username=#{username},
-            password=#{password}
+            password=#{password},
+            sex=#{sex},
+            realname=#{realname},
+            phone=#{phone}
         where userid = #{userid}
     </update>
     <!--    查询所有用户-->

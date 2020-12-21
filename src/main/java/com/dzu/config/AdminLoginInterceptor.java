@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-//添加拦截器 管理员登录系统前进行校验
+//添加拦截器 管理员只有登录系统才可以进行操作
 public class AdminLoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession(); //根据客户端的cookie 获取session对象
         System.out.println(session.getId());
         Admin admin = (Admin) session.getAttribute("admin");
         System.out.println(admin);

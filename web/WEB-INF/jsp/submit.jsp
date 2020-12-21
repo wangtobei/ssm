@@ -45,12 +45,14 @@
             </div>
             <div class="col-12">
                 <label for="username">报考人</label>
-                <input type="text" class="form-control" placeholder="报考人" id="username" name="username" readonly
+                <input type="text" class="form-control" placeholder="报考人" id="username" name="username"
                        value="${user.username}">
             </div>
             <div class="col-12">
                 <label for="phone">电话</label>
-                <input type="text" class="form-control" id="phone" placeholder="联系方式" name="phone" required>
+                <input type="text" class="form-control" id="phone" placeholder="联系方式" name="phone" required
+                       value="${user.phone}"
+                >
             </div>
             <div class="col-12">
                 <label>费用</label>

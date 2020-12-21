@@ -16,6 +16,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
+    //使用注解依赖注入
     @Autowired
     @Qualifier("AdminServiceImp")
     private AdminService adminService;
@@ -36,16 +37,19 @@ public class AdminController {
     @Qualifier("UserServiceImp")
     private Userservice userservice;
 
+    //显示管理员登录页面
     @RequestMapping("")
     public String AdminLogin() {
         return "admin/login";
     }
 
+    //显示管理员管理界面
     @RequestMapping("/dashboard")
     public String Dashboard() {
         return "admin/dashboard";
     }
 
+    //进行验证
     @RequestMapping("/verify")
     public String Verify(Model model, Admin admin, HttpSession session) {
         Admin adminDB = adminService.queryAdminByName(admin.getUsername());
@@ -71,6 +75,7 @@ public class AdminController {
         return noticeService.queryNotices();
     }
 
+    //删除公告
     @RequestMapping("/notices/delete/{id}")
     @ResponseBody
     public boolean deleteNotices(@PathVariable int id) {
@@ -78,6 +83,7 @@ public class AdminController {
         return true;
     }
 
+    //更新公告
     @RequestMapping("/notices/update")
     @ResponseBody
     public boolean updateNotices(Notice notice) {
@@ -85,11 +91,13 @@ public class AdminController {
         return true;
     }
 
+    //返回添加页面
     @RequestMapping("/notices/add")
     public String addNotice() {
         return "admin/addNotices";
     }
 
+    //将新的公告添加到数据库
     @RequestMapping("/notices/adddb")
     public String addNoticeToDB(Notice notice) {
         noticeService.addNotice(notice);
@@ -136,6 +144,13 @@ public class AdminController {
     public String addNewsTODB(News news) {
         newService.addNews(news);
         return "redirect:/admin/dashboard/news";
+    }
+
+    //根据标题查询
+    @RequestMapping("/dashboard/news/query/{title}")
+    @ResponseBody
+    public List<News> queryNewByTitle(@PathVariable String title) {
+        return newService.queryNews(title);
     }
 
     //科目页面
@@ -233,6 +248,7 @@ public class AdminController {
         userservice.deleteUserById(id);
         return true;
     }
+
     @RequestMapping("/dashboard/logout")
     public String Logout(HttpSession session) {
         session.invalidate();

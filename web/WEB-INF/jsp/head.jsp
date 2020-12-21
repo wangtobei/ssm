@@ -44,6 +44,7 @@
                     我的
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="${pageContext.request.contextPath}/dashboard/userinfo">信息完善</a>
                     <a class="dropdown-item" href="${pageContext.request.contextPath}/dashboard/signed">已报名</a>
                     <a class="dropdown-item" href="${pageContext.request.contextPath}/logout">退出系统</a>
                 </div>

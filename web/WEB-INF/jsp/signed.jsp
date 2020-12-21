@@ -34,7 +34,7 @@
                             onclick="window.location.href='/dashboard/signrecord/delete/${item.rid}'">取消报名
                     </button>
                     <button type="button" class="btn btn-info btn-sm"
-                            onclick="window.location.href='/dashboard/signrecord/print/${item.rid}'">打印追考证
+                            onclick="window.location.href='/dashboard/signrecord/print/${item.rid}'">打印准考证
                     </button>
                 </td>
             </tr>

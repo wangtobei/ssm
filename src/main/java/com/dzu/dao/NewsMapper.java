@@ -11,7 +11,7 @@ public interface NewsMapper {
 
     int updateNews(News news);
 
-    News queryNews(int id);
+    List<News> queryNews(String title);
 
     List<News> queryAllNews();
 }

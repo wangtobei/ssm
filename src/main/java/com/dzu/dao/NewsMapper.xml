@@ -19,10 +19,10 @@
             content=#{content}
         where id = #{id}
     </update>
-    <select id="queryNews" parameterType="Integer" resultType="com.dzu.pojo.News">
+    <select id="queryNews" parameterType="java.lang.String" resultType="com.dzu.pojo.News">
         select *
         from news
-        where id = #{id}
+        where title = #{title}
     </select>
     <select id="queryAllNews" resultType="com.dzu.pojo.News">
         select *

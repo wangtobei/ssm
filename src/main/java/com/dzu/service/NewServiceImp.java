@@ -24,8 +24,9 @@ public class NewServiceImp implements NewService {
         return newsMapper.updateNews(news);
     }
 
-    public News queryNews(int id) {
-        return newsMapper.queryNews(id);
+
+    public List<News> queryNews(String title) {
+        return newsMapper.queryNews(title);
     }
 
     public List<News> queryAllNews() {

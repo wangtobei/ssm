@@ -4,6 +4,43 @@ public class User {
     private int userid;
     private String username;
     private String password;
+    private String realname;
+    private String phone;
+    private String sex;
+
+    public String getRealname() {
+        return realname;
+    }
+
+    public void setRealname(String realname) {
+        this.realname = realname;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public int getLogintimes() {
+        return logintimes;
+    }
+
+    public void setLogintimes(int logintimes) {
+        this.logintimes = logintimes;
+    }
+
+    private int logintimes = 0;
 
 
     public int getUserid() {

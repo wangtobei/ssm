@@ -49,7 +49,7 @@
             , cols: [[
                 {field: 'rid', title: 'ID', fixed: 'left', unresize: true, sort: true}
                 , {field: 'subject', title: '科目'}
-                , {field: 'username', title: '报考人', edit: 'text'}
+                , {field: 'username', title: '报考人'}
                 , {field: 'phone', title: '联系方式', edit: 'text'}
                 , {fixed: 'right', title: '操作', toolbar: '#barDemo'}
             ]]

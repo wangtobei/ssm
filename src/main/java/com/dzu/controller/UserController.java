@@ -38,11 +38,17 @@ public class UserController {
     }
 
     @RequestMapping("/user/add")
-    public String addUser(User user) {
+    public String addUser(User user, Model model) {
         System.out.println("添加用户");
         System.out.println(user);
-        userservice.addUser(user);
-        return "redirect:/";
+        User userdb = userservice.queryUserByName(user.getUsername());
+        if (userdb == null) {
+            userservice.addUser(user);
+            return "redirect:/";
+        }
+        model.addAttribute("tips", "用户名已经注册！");
+        return "register";
+
     }
 
     @RequestMapping("/dashboard/userinfo")

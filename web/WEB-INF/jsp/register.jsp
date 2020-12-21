@@ -44,6 +44,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">注册</button>
                 <button type="button" class="btn btn-primary" onclick="window.location.href='/'">去登陆</button>
+                <span style="color: red">${tips}</span>
             </form>
         </div>
     </div>

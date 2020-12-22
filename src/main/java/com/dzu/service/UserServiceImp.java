@@ -40,4 +40,8 @@ public class UserServiceImp implements Userservice {
     public List<User> queryUsersByName(String username) {
         return userMapper.queryUsersByName(username);
     }
+
+    public int addLoginTimes(int id) {
+        return userMapper.addLoginTimes(id);
+    }
 }

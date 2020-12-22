@@ -40,9 +40,9 @@ public class UserController {
     @RequestMapping("/user/add")
     public String addUser(User user, Model model) {
         System.out.println("添加用户");
-        System.out.println(user);
         User userdb = userservice.queryUserByName(user.getUsername());
         if (userdb == null) {
+            user.setLogintimes(0);
             userservice.addUser(user);
             return "redirect:/";
         }

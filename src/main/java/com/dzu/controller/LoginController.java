@@ -46,6 +46,7 @@ public class LoginController {
             if (user.getPassword().equals(userDB.getPassword())) {
                 System.out.println("登录成功！");
                 session.setAttribute("user", userDB);
+                userservice.addLoginTimes(userDB.getUserid());
                 return "redirect:/dashboard";
             }
             model.addAttribute("tips", "账号密码错误，请重新输入！");

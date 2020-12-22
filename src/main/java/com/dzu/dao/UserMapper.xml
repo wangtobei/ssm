@@ -5,8 +5,8 @@
 <mapper namespace="com.dzu.dao.UserMapper">
     <!--    插入一个新用户-->
     <insert id="addUser" parameterType="com.dzu.pojo.User">
-        insert into signuser(username, password)
-        values (#{username}, #{password})
+        insert into signuser(username, password,LOGINTIMES)
+        values (#{username}, #{password},#{logintimes})
     </insert>
     <!--    根据ID删除一个用户-->
     <delete id="deleteUserById" parameterType="Integer">
@@ -21,7 +21,8 @@
             password=#{password},
             sex=#{sex},
             realname=#{realname},
-            phone=#{phone}
+            phone=#{phone},
+            LOGINTIMES=#{logintimes}
         where userid = #{userid}
     </update>
     <!--    查询所有用户-->
@@ -49,4 +50,9 @@
         from SIGNUSER
         where username = #{username}
     </select>
+    <update id="addLoginTimes" parameterType="Integer">
+        update SIGNUSER
+        set LOGINTIMES=LOGINTIMES + 1
+        where USERID = #{id}
+    </update>
 </mapper>

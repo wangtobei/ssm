@@ -24,4 +24,5 @@ public interface Userservice {
     //根据用户名查询用户
     User queryUserByName(String username);
     List<User> queryUsersByName(String username);
+    int addLoginTimes(int id);
 }

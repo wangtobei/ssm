@@ -25,4 +25,5 @@ public interface UserMapper {
     User queryUserByName(@Param("username") String username);
 
     List<User> queryUsersByName(String username);
+    int addLoginTimes(int id);
 }
